@@ -15,6 +15,10 @@ def print_math_results():
     print(divide(7, 5))
 
 
+def validate_equation(equation):
+    re.sub('[a-zA-Z,.:()" "]', '', equation)
+
+
 def perform_math():
     global run
     global previous
@@ -27,7 +31,7 @@ def perform_math():
     if equation == 'quit':
         run = False
     else:
-        equation = re.sub('[a-zA-Z,.:()" "]', '', equation)
+        validate_equation(equation)
         """print_math_results()"""
 
         if previous == 0:
