@@ -42,3 +42,4 @@ def perform_math():
 
 while run:
     perform_math()
+print_math_results()
