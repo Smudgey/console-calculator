@@ -1,3 +1,3 @@
-# console-calculator
+# python-intro
 
-Very basic console calculator as an initial look into Python, it's syntax and functionality.
+Very basic console application as an initial look into Python, it's syntax and functionality.
