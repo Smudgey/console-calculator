@@ -1,42 +1,15 @@
 import re
-import random
 from modules.core_math import *
+from modules.enemy import Enemy
+from modules.player import Player
 
-
-class Enemy:
-    hp = 200
-
-    def __init__(self, atkl, atkh, name):
-        self.atkl = atkl
-        self.atkh = atkh
-        self.name = name
-
-    def get_attack(self):
-        return int(random.randrange(self.atkl, self.atkh))
-
-    def print_hp(self):
-        print(self.name, "HP is", self.hp)
-
-
-class Player:
-    hp = 200
-
-    def __init__(self, atkl, atkh, name):
-        self.atkl = atkl
-        self.atkh = atkh
-        self.name = name
-
-    def get_attack(self):
-        return int(random.randrange(self.atkl, self.atkh))
-
-    def print_hp(self):
-        print(self.name, "HP is", self.hp)
 
 print("Python Intro")
 print("Type 'quit' to exit\n")
 
 previous = 0
 run = True
+equation = ""
 my_list = ["One", "Two",
            "Three", "Four",
            "Five", "Six"]
@@ -60,6 +33,7 @@ def validate_equation(equation):
 def perform_math():
     global run
     global previous
+    global equation
 
     if previous == 0:
         equation = input("Enter an equation: ")
@@ -68,6 +42,9 @@ def perform_math():
 
     if equation == 'quit':
         run = False
+    elif equation == 'rpg':
+        run = False
+        print("rpg")
     else:
         validate_equation(equation)
         """print_math_results()"""
@@ -81,23 +58,24 @@ def perform_math():
 while run:
     perform_math()
 
-print_math_results()
-check_list_index(my_list, 4)
+if equation == 'quit':
+    print_math_results()
+    check_list_index(my_list, 4)
 
-player1 = Player(120, 150, "Player 1")
-enemy1 = Enemy(40, 50, "Enemy 1")
-enemy2 = Enemy(75, 90, "Enemy 2")
+    player1 = Player(120, 150, "Player 1")
+    enemy1 = Enemy(40, 50, "Enemy 1")
+    enemy2 = Enemy(75, 90, "Enemy 2")
 
-while player1.hp > 0:
-    reduction = enemy1.get_attack() + enemy2.get_attack()
-    player1.hp -= reduction
+    while player1.hp > 0:
+        reduction = enemy1.get_attack() + enemy2.get_attack()
+        player1.hp -= reduction
 
-    if player1.hp <= 0:
-        player1.hp = 0
+        if player1.hp <= 0:
+            player1.hp = 0
 
-    print("HP reduced by", reduction, "New value is", player1.hp)
+        print("HP reduced by", reduction, "New value is", player1.hp)
 
-    if player1.hp != 0:
-        continue
+        if player1.hp != 0:
+            continue
 
-    print("You have died, exiting program...")
+        print("You have died, exiting program...")
