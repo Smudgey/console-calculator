@@ -2,7 +2,37 @@ import re
 import random
 from modules.core_math import *
 
-print("Console Calculator")
+
+class Enemy:
+    hp = 200
+
+    def __init__(self, atkl, atkh, name):
+        self.atkl = atkl
+        self.atkh = atkh
+        self.name = name
+
+    def get_attack(self):
+        return int(random.randrange(self.atkl, self.atkh))
+
+    def print_hp(self):
+        print(self.name, "HP is", self.hp)
+
+
+class Player:
+    hp = 200
+
+    def __init__(self, atkl, atkh, name):
+        self.atkl = atkl
+        self.atkh = atkh
+        self.name = name
+
+    def get_attack(self):
+        return int(random.randrange(self.atkl, self.atkh))
+
+    def print_hp(self):
+        print(self.name, "HP is", self.hp)
+
+print("Python Intro")
 print("Type 'quit' to exit\n")
 
 previous = 0
@@ -19,8 +49,8 @@ def print_math_results():
     print(divide(7, 5))
 
 
-def check_list_index(list, index):
-    print(list[index])
+def check_list_index(a_list, index):
+    print(a_list[index])
 
 
 def validate_equation(equation):
@@ -51,24 +81,23 @@ def perform_math():
 while run:
     perform_math()
 
-
 print_math_results()
 check_list_index(my_list, 4)
 
-a_value = 260
-reduce_low = 60
-reduce_high = 80
+player1 = Player(120, 150, "Player 1")
+enemy1 = Enemy(40, 50, "Enemy 1")
+enemy2 = Enemy(75, 90, "Enemy 2")
 
-while a_value > 0:
-    reduction = random.randrange(reduce_low, reduce_high)
-    a_value -= reduction
+while player1.hp > 0:
+    reduction = enemy1.get_attack() + enemy2.get_attack()
+    player1.hp -= reduction
 
-    if a_value <= 0:
-        a_value = 0
+    if player1.hp <= 0:
+        player1.hp = 0
 
-    print("Value reduced by", reduction, "New value is", a_value)
+    print("HP reduced by", reduction, "New value is", player1.hp)
 
-    if a_value != 0:
+    if player1.hp != 0:
         continue
 
-    print("Lowest allowed value reached, exiting program...")
+    print("You have died, exiting program...")
