@@ -1,6 +1,7 @@
 import random
 
-class Player:
+
+class Enemy:
     max_hp = 200
     hp = 200
 
@@ -10,7 +11,7 @@ class Player:
         self.name = name
 
     def get_attack(self):
-        return int(random.randrange(self.atkl, self.atkh))
+        return random.randrange(self.atkl, self.atkh)
 
     def print_hp(self):
         print(self.name, "HP is", self.hp)
