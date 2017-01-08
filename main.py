@@ -1,5 +1,5 @@
 import re
-from modules.game import battle
+from modules.battle import battle
 from modules.quit import quit_operations
 
 print("Python Intro")

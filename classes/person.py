@@ -1,4 +1,5 @@
 import random
+from classes.colours import Colours
 
 
 class Person:
@@ -55,14 +56,14 @@ class Person:
 
     def choose_action(self):
         i = 1
-        print("Actions")
+        print(Colours.OKBLUE + Colours.BOLD + "Actions" + Colours.ENDC)
         for item in self.actions:
             print(str(i) + ":", item)
             i += 1
 
     def choose_magic(self):
         i = 1
-        print("Magic")
+        print(Colours.OKBLUE + Colours.BOLD + "Magic" + Colours.ENDC)
         for spell in self.magic:
             print(str(i) + ":", spell["name"], "(cost:", str(spell["mp"]) + ")")
             i += 1
