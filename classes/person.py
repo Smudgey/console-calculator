@@ -65,5 +65,5 @@ class Person:
         i = 1
         print(Colours.OKBLUE + Colours.BOLD + "Magic" + Colours.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell["name"], "(cost:", str(spell["mp"]) + ")")
+            print(str(i) + ":", spell["name"], "(cost:", str(spell["cost"]) + ")")
             i += 1
