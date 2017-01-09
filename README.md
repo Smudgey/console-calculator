@@ -10,7 +10,10 @@ main.py contains a basic equation solver, with 2 other options.
 'rpg' will start a small rpg battle simulation
 
 ### fileio.py
-fileio.py contains basic input/output examples for local text files, including the use of json
+Basic input/output examples for local text files, including the use of json
 
 ### requeststests.py
-requeststests.py contains http requests, that will grab a wepage and another that will grab an image
+Http requests, that will grab a web page and another that will grab an image
+
+### webscrape.py
+Making use of BeautifulSoup, the file will allow the user to enter a search term and it will return and display the results, using web scraping.
