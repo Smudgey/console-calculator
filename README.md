@@ -1,6 +1,6 @@
-# python-intro
+# python-examples
 
-Basic console application as an initial look into Python, it's syntax and functionality.
+Basic console application with basic Python examples, it's syntax and functionality.
 
 There are a few different files that can be run
 
@@ -16,4 +16,9 @@ Basic input/output examples for local text files, including the use of json
 Http requests, that will grab a web page and another that will grab an image
 
 ### webscrape.py
-Making use of BeautifulSoup, the file will allow the user to enter a search term and it will return and display the results, using web scraping.
+Making use of BeautifulSoup, there are 2 options 'search' and 'images':
+- 'search' will allow the user to enter a search term and it will return and display the web link results, using web scraping.
+- 'images' will allow the user to enter a search term and it will return an image search for that term and store the images.
+
+### pymongotest.py
+Connects to a local Mongo database, inserts a few documents and then performs some searches.
