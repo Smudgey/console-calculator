@@ -22,7 +22,6 @@ if search == 'search':
         if item_text and item_href:
             print(item_text)
             print(item_href)
-            print("Summary:", item.find("a").parent.parent.find("p").text)
 elif search == 'images':
     search = input("Search for: ")
     params = {"q": search}
@@ -43,7 +42,7 @@ elif search == 'images':
             title = item.attrs["href"].split("/")[-1]
             try:
                 img = Image.open(BytesIO(img_obj.content))
-                img.save('./' + dir_name + '/' + title, img.format)
+                img.save('./image_searches/' + dir_name + '/' + title, img.format)
             except:
                 print("Could not save image")
         except:
