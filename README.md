@@ -1,6 +1,6 @@
 # python-examples
 
-Basic console application with basic Python examples, it's syntax and functionality.
+A few basic Python scripts with examples, of it's syntax and functionality.
 
 There are a few different files that can be run
 
