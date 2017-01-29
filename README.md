@@ -21,4 +21,4 @@ Making use of BeautifulSoup, there are 2 options 'search' and 'images':
 - 'images' will allow the user to enter a search term and it will return an image search for that term and store the images.
 
 ### pymongotest.py
-Connects to a local Mongo database, inserts a few documents and then performs some searches.
+Connects to a local Mongo database, inserts a few documents and then performs some searches. Includes comments explaining various search mechanics.
